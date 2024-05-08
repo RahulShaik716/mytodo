@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+*,
+*::after,
+*::before{
+  margin : 0; 
+  padding : 0; 
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,body,#root{
+  width : 100vw;
+  height: 100vh;
+  background-color: #111500;
+  color : #fff;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.app{
+  display : flex; 
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin : 0; 
+  padding :0;
+  width: inherit;
+  height: inherit;
+  gap : 5vh;
+}
+.form {
+  display : flex; 
+  max-width: 50%;
+  width:  40% ;
+  align-self: center;
+  gap : 2%;
+  height : 5vh;
+
+}
+.form input[type="text"]{
+  width : 80%;
+  background-color: #0d0d0d;
+  border-radius: 11px;
+  color : #dddddd;
 }
 
-.App-link {
-  color: #61dafb;
+.form input[type="submit"]{
+  width : 20%;
+  border-radius: 11px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todohero{
+  display : flex;
+  width : 40%;
+  height : 20vh;
+  border: 1px solid orange;
+  justify-content: center;
+  gap : 5vw;
+  align-items: center;
+}
+.class1{
+  align-self: center;
+}
+.title {
+  font-size: 20px;
+}
+.subtitle{
+  font-size: 16px;
+}
+.class2{
+  background-color: #88ab33;
+  width: 18vh;
+  height: 18vh;
+  border-radius: 75px;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.header{
+  display: flex; 
+  margin-right : 40%;
+  margin-bottom : 3vh;
+  align-items: center;
+  gap : 1vw;
+}
+.list{
+  display : flex; 
+  flex-direction: column;
+  gap : 2vh;
+  width : 40%;
+}
+.listitem{
+  border : 1px solid red;
+  height : 6vh;
+  border-radius: 11px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap : 2vh;
+  justify-content: space-between;
+}
+.left {
+  display : flex; 
+  gap : 1vw;
+  align-items: center;
+}
+.right {
+  display :flex;
+  gap : 1vw;
 }

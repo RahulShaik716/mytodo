@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Header from './components/header';
+import Form from './components/form';
+import Todohero from './components/todohero';
+import TodoList from './components/todoList';
+import { useState,useEffect, useMemo } from 'react';
 function App() {
+  const initialState = useMemo(()=>
+    {
+       const local_state = localStorage.getItem('todos');
+       if(local_state)
+        return JSON.parse(local_state);
+      return [];
+    },[]);
+  const [todos,setTodos] = useState(initialState);
+  useEffect(()=>
+    {
+      localStorage.setItem('todos',JSON.stringify(todos));
+    },[todos]);
+  let completed = todos.filter(x=>x.isCompleted === true); 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <div className='app'>
+     <Header/>
+     <Todohero length={[completed.length,todos.length]} />
+     <Form  setTodos={setTodos}/>
+     <TodoList todos={todos} setTodos={setTodos}/>
+  </div>
   );
 }
 
